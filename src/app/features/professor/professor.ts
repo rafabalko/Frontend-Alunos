@@ -112,7 +112,7 @@ export class ProfessorComponent implements OnInit {
     this.atividadeService.criarAtividade(payload).subscribe({
       next: () => {
         setTimeout(() => {
-          this.router.navigate(['professor/atividades']);
+          this.router.navigate(['/professor/atividades']);
         }, 1500);
       },
       error: (err) => {
