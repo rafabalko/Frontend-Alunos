@@ -7,8 +7,7 @@ export class ConfigService {
   private apiUrl!: string;
 
   loadConfig(): void {
-    const ip = window.location.hostname;
-    this.apiUrl = `http://${ip}:8080`;
+    this.apiUrl = `${window.location.origin}/api`;
 
     console.log('API configurada:', this.apiUrl);
   }
@@ -17,6 +16,7 @@ export class ConfigService {
     if (!this.apiUrl) {
       throw new Error('Configuração ainda não carregada!');
     }
+
     return `${this.apiUrl}/${path}`;
   }
 }
